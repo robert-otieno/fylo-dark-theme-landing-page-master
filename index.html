@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Fylo landing page with dark theme and features grid</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <style type="text/tailwindcss">
+    
+    .heading {
+        font-family: 'Raleway', sans-serif;
+      }
+    @layer utilities {
+      body {
+          min-height: 100vh;
+          background: var(--primary-main-bg);
+          font-size: 14px;
+          color: hsl(0, 0%, 100%);
+          font-family: 'Open Sans', sans-serif;
+      }
+      p {
+        @apply text-gray-300
+      }
+      /* Features */
+      .features {
+        @apply grid grid-cols-1 space-y-16 mt-20 lg:grid-cols-2 lg:space-y-0 lg:gap-y-8 lg:w-4/5 lg:mx-auto
+      }
+      .features__item {
+        @apply flex flex-col text-center items-center w-4/5 m-auto
+      }
+      .features__item > img {
+        @apply w-auto p-6
+      }
+      .features__item > h2 {
+        @apply p-4 font-bold text-xl
+      }
+      .features__item > p {
+        @apply text-base leading-6 px-4
+      }      
+      /* Testimonials */
+      /* .testimonials {
+        @apply 
+      } */
+      .testimonials__card {
+        @apply p-8 bg-testimonial m-auto rounded-lg
+      }
+      /* Newsletter */
+      .newsletter {
+        @apply bg-introEmail rounded-lg shadow-2xl p-8 mx-auto mt-40 flex flex-col space-y-6 items-center text-center w-11/12 lg:w-3/5
+      }
+      .newsletter h3 {
+        @apply font-bold text-2xl
+      }
+      .newsletter p {
+        @apply text-base leading-6
+      }
+      .newsletter__form {
+        @apply flex flex-col justify-center space-y-4 w-full lg:flex-row lg:space-y-0
+      }
+      .newsletter__form input{
+        @apply rounded-full p-4 text-sm lg:mr-4 lg:flex-1
+      }
+      .newsletter__form button{
+        @apply p-4 bg-gradient-to-r from-ctaGradient1 to-ctaGradient2 rounded-full font-bold tracking-wider
+      }
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            main: 'hsl(218, 28%, 13%)',
+            testimonial: 'hsl(219, 30%, 18%)',
+            introEmail: 'hsl(217, 28%, 15%)',
+            ctaGradient1: 'hsl(176, 68%, 64%)',
+            ctaGradient2: 'hsl(198, 60%, 50%)',
+            footer: 'hsl(216, 53%, 9%)'
+          },
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="p-8 flex items-center justify-between">
+    <img src="./images/logo.svg" alt="logo" class="h-7 cursor-pointer">
+    <nav class="">
+      <ul class="flex space-x-6">
+        <li class="">Features</li>
+        <li class="">Team</li>
+        <li class="">Sign In</li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="flex flex-col w-4/5 mx-auto items-center justify-between text-center">
+    <img src="./images/illustration-intro.png" alt="Hero Illustration">
+
+    <h1 class="heading font-bold text-2xl px-4 mt-8 tracking-wider leading-10">All your files in one secure location, accessible anywhere.</h1>
+    <p class="text-lg px-4 py-8 text-gray-300">Fylo stores all your most important files in one secure location. Access them wherever you need, share and collaborate with friends family, and co-workers.</p>
+    <button class="p-4 bg-gradient-to-r from-ctaGradient1 to-ctaGradient2 rounded-full font-bold tracking-wider w-4/5">Get Started</button>
+  </section>
+
+  <section class="features">
+    <div class="features__item">
+      <img src="./images/icon-access-anywhere.svg" alt="">
+      <h2>Access your files, anywhere</h2>
+      <p>The ability to use a smartphone, tablet, or computer to access your account means your files follow you everywhere.</p>
+    </div>
+    <div class="features__item">
+      <img src="./images/icon-security.svg" alt="">
+      <h2>Security you can trust</h2>
+      <p>
+        2-factor authentication and user-controlled encryption are
+        just a couple of the security features we allow to
+        help secure your files.</p>
+    </div>
+    <div class="features__item">
+      <img src="./images/icon-collaboration.svg" alt="">
+      <h2>Real-time collaboration</h2>
+      <p>Securely share files and folders with friends, family and
+        colleagues for live collaboration. No email attachments
+        required.</p>
+    </div>
+    <div class="features__item">
+      <img src="./images/icon-any-file.svg" alt="">
+      <h2>Store any type of file</h2>
+      <p>Whether you're sharing holidays photos or work
+        documents, Fylo has you covered allowing for all
+        file types to be securely stored and shared.</p>
+    </div>
+  </section>
+
+  <section class="flex flex-col lg:flex-row w-4/5 mx-auto items-center justify-between text-center mt-20">
+    <img class="" src="./images/illustration-stay-productive.png" alt="">
+    <div class="my-10 text-left space-y-4">
+      <h2 class="font-bold text-xl">Stay productive, wherever you are</h2>
+      <p class="text-gray-300 tracking-wider leading-6">Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.</p>
+      <p class="text-gray-300 tracking-wider leading-6">Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.</p>
+      <span class="mt-4 block text-ctaGradient1"><a class="border-b border-ctaGradient1 pb-1 flex items-center w-fit" href="">See how Fylo works <ion-icon class="ml-1" name="arrow-forward-circle"></ion-icon></a></span>
+    </div>
+  </section>
+
+  <section class="relative flex flex-col items-center justify-center space-y-7 mt-20 mx-auto w-4/5 lg:w-4/5 lg:flex-row lg:space-y-0 lg:space-x-4">
+    <img class="absolute h-7 top-0 left-1 -z-10" src="./images/bg-quotes.png" alt="">
+    <div class="testimonials__card">
+      <p class="leading-6">Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
+      <div class="flex mt-4">
+        <img class="rounded-full h-10" src="./images/profile-1.jpg" alt="">
+        <div class="flex flex-col justify-center ml-4 text-sm">
+          <p class="font-bold">Satish Patel</p>
+          <small class="tracking-wider">Founder & CEO, Huddle</small>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials__card">
+      <p class="leading-6">Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
+      <div class="flex mt-4">
+        <img class="rounded-full h-10" src="./images/profile-2.jpg" alt="">
+        <div class="flex flex-col justify-center ml-4 text-sm">
+          <p class="font-bold">Bruce McKenzie</p>
+          <small class="tracking-wider">Founder & CEO, Huddle</small>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials__card">
+      <p class="leading-6">Fylo has improved our team productivity by
+        an order of magnitude. Since making the
+        switch our team has become a well-oiled
+        collaboration machine.</p>
+      <div class="flex mt-4">
+        <img class="rounded-full h-10" src="./images/profile-3.jpg" alt="">
+        <div class="flex flex-col justify-center ml-4 text-sm">
+          <p class="font-bold">Iva Boyd</p>
+          <small class="tracking-wider">Founder & CEO, Huddle</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h3>Get early access today</h3>
+    <p>It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
+    <form class="newsletter__form">
+      <input type="text" placeholder="email@example.com">
+      <button>Get Started For Free</button>
+    </form>
+  </section>
+
+  <footer class="bg-footer">
+    <div>
+      <div>
+        <img src="./images/logo.svg" alt="logo" class="h-12 cursor-pointer">
+        <div class="flex ">
+          <ion-icon class="h-6" name="location"></ion-icon>
+          <p>Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua</p>
+        </div>
+      </div>
+      <div>
+        <div><ion-icon name="call"></ion-icon><p>+1-543-123-4567</p></div>
+        <div><ion-icon name="mail"></ion-icon><p>example@fylo.com</p></div>
+      </div>
+      <div>
+        <ul>
+          <li>About Us</li>
+          <li>Jobs</li>
+          <li>Press</li>
+          <li>Blog</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Contact Us</li>
+          <li>Terms</li>
+          <li>Privacy</li>
+        </ul>
+      </div>
+      <div class="social__links"></div>
+    </div>
+
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Robert Otieno</a>.
+    </p>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
